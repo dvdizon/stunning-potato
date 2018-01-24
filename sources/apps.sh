@@ -87,9 +87,6 @@ brew bundle --file=- <<EOF
     cask 'font-meslo-for-powerline'
     cask 'font-source-code-pro-for-powerline'
 
-    # Apple specific stuff
-    brew 'mas'
-    mas 'InstaCal', id: 1247292524
 EOF
 
 brew cleanup
