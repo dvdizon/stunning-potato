@@ -11,10 +11,10 @@ pinfo "General UI/UX"
 ###############################################################################
 
 pnotice "Set computer name (as done via System Preferences → Sharing)"
-sudo scutil --set ComputerName "heart-of-gold"
-sudo scutil --set HostName "heart-of-gold"
-sudo scutil --set LocalHostName "heart-of-gold"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "heart-of-gold"
+sudo scutil --set ComputerName "bamboo-farm"
+sudo scutil --set HostName "bamboo-farm"
+sudo scutil --set LocalHostName "bamboo-farm"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "bamboo-farm"
 
 pnotice "Set standby delay to 24 hours (default is 1 hour)"
 sudo pmset -a standbydelay 86400
