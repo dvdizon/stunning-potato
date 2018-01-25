@@ -15,6 +15,7 @@ brew bundle --file=- <<EOF
     # Shell Stuff
     brew 'lastpass-cli'   # Accessing secrets
     brew 'zsh'            # Not bash
+    brew 'fish'           # fish
     brew 'zsh-syntax-highlighting'
     brew 'coreutils'      # All those cool GNU things
     brew 'gpg'            # Encryption and Signing
@@ -77,7 +78,6 @@ brew bundle --file=- <<EOF
 
     # Gaming
     cask 'steam'          # So I can play games
-    cask 'battle-net'     # Lots of games
     brew 'nethack'        # For when you're feeling nostalgic
 
     # Fonts
@@ -92,15 +92,3 @@ EOF
 brew cleanup
 brew cask cleanup
 brew prune
-
-pinfo "Installing Oh-My-ZSH"
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-#chsh -s /bin/zsh
-
-pinfo "Installing oh-my-fish"
-curl -L https://get.oh-my.fish > install
-fish install --path=~/.local/share/omf --config=~/.config/omf
-chsh -s `which fish`
-
-pinfo "Installing Interactive Items"
-open /usr/local/Caskroom/battle-net/latest/Battle.net-Setup.app

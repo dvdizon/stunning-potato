@@ -118,11 +118,11 @@ pnotice "Disable hibernation (speeds up entering sleep mode)"
 sudo pmset -a hibernatemode 0
 
 pnotice "Remove the sleep image file to save disk space"
-sudo rm /private/var/vm/sleepimage
+# sudo rm /private/var/vm/sleepimage
 pnotice "Create a zero-byte file instead…"
-sudo touch /private/var/vm/sleepimage
+# sudo touch /private/var/vm/sleepimage
 pnotice "...and make sure it can’t be rewritten"
-sudo chflags uchg /private/var/vm/sleepimage
+# sudo chflags uchg /private/var/vm/sleepimage
 
 ###############################################################################
 pinfo "Trackpad, mouse, keyboard, Bluetooth accessories, and input"
@@ -178,8 +178,8 @@ pinfo "Screen"
 ###############################################################################
 
 pnotice "Require password immediately after sleep or screen saver begins"
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
+# defaults write com.apple.screensaver askForPassword -int 1
+# defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 pnotice "Save screenshots to the Dropbox"
 defaults write com.apple.screencapture location -string "${HOME}/Dropbox/Photos/Screenshots"
@@ -478,7 +478,7 @@ pnotice "Prevent Time Machine from prompting to use new hard drives as backup vo
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 pnotice "Disable local Time Machine backups"
-hash tmutil &> /dev/null && sudo tmutil disablelocal
+# hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 ###############################################################################
 pinfo "Activity Monitor"
