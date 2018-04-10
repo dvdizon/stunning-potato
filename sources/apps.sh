@@ -36,7 +36,7 @@ brew bundle --file=- <<EOF
 
     # Editors
     cask 'atom'           # Coding and stuff
-    cask 'sublime-text3'  # Editing big files
+    cask 'sublime-text'   # Editing big files
     cask 'xmind'          # Mindmapping
     cask 'macdown'        # Markdown editor
     brew 'vim'            # When you really need it
@@ -52,18 +52,24 @@ brew bundle --file=- <<EOF
     brew 'kubernetes-cli' # Controlling deployed services
     brew 'awscli'         # Working with Amazon
     cask 'insomnia'       # RESTful calls
+    brew 'pandoc'         # Converting formats
+    brew 'jsonnet'        # Making JSON easier
+    brew 'ksonnet/tap/ks' # Write and Deploy Kubernetes configs
+    brew 'kubectx'        # allows you to switch context
+    brew 'skaffold'       # facilitates continuous development for k8s
 
     # Productivity
     cask 'iterm2'         # Doing things on a terminal
     cask 'alfred'         # Shortcuts to awesome
     cask 'vlc'            # Watching movies
-    cask 'google-chrome'  # Browsing the web
+    #cask 'google-chrome'  # Browsing the web
     cask 'keybase'        # Sharing secrets
     brew 'screen'         # Just in case
     cask 'unison'         # Sharing files
     cask 'jdownloader'    # To make downloading easier
     cask 'the-unarchiver' # To decompress things
     cask 'appcleaner'     # Help removing stuff
+    cask 'spotify'        # Spotify music
     # cask 'copay'        # Paying people
 
     # Security
@@ -75,6 +81,9 @@ brew bundle --file=- <<EOF
     cask 'caffeine'       # Keep screen from going to sleep
     cask 'spectacle'      # Move windows around
     cask 'flux'           # Sleep better
+
+    # Toolbox
+    cask 'cscreen'        # To set the right refresh rate
 
     # Gaming
     cask 'steam'          # So I can play games
