@@ -36,6 +36,7 @@ brew bundle --file=- <<EOF
 
     # Editors
     cask 'atom'           # Coding and stuff
+    cask 'goland'         # golang editor
     cask 'sublime-text'   # Editing big files
     cask 'xmind'          # Mindmapping
     cask 'macdown'        # Markdown editor
