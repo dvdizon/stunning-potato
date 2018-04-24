@@ -58,6 +58,7 @@ brew bundle --file=- <<EOF
     brew 'ksonnet/tap/ks' # Write and Deploy Kubernetes configs
     brew 'kubectx'        # allows you to switch context
     brew 'skaffold'       # facilitates continuous development for k8s
+    brew 'terraform'      # AWS terraform cli
 
     # Productivity
     cask 'iterm2'         # Doing things on a terminal
