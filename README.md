@@ -14,9 +14,9 @@ Bootstrap script to restore a new Mac
 ## Usage
 
 ```bash
-$ curl -L -o potato.zip https://github.com/dvdizon/stunning-potato/archive/master.zip
+$ curl -L -o potato.zip https://github.com/dvdizon/stunning-potato/archive/main.zip
 $ unzip potato.zip
-$ pushd stunning-potato-master
+$ pushd stunning-potato-main
 $ ./restore.sh
 ```
 
