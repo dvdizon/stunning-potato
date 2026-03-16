@@ -1,7 +1,17 @@
-pinfo "Installing Oh-My-ZSH"
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+pinfo "Configuring Shell"
+
+pnotice "Setting default shell to zsh"
 chsh -s /bin/zsh
 
-# pinfo "Installing oh-my-fish"
-# curl -L https://get.oh-my.fish > install
-# fish install --path=~/.local/share/omf --config=~/.config/omf
+pnotice "Configuring Starship prompt"
+mkdir -p ~/.config
+if [ ! -f ~/.config/starship.toml ]; then
+    starship preset plain-text -o ~/.config/starship.toml
+fi
+
+pnotice "Adding Starship init to ~/.zshrc"
+if ! grep -q 'starship init zsh' ~/.zshrc 2>/dev/null; then
+    echo '' >> ~/.zshrc
+    echo '# Starship prompt' >> ~/.zshrc
+    echo 'eval "$(starship init zsh)"' >> ~/.zshrc
+fi

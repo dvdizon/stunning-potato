@@ -20,41 +20,30 @@ $ pushd stunning-potato-main
 $ ./restore.sh
 ```
 
-## Additional Info
+## Installed Tools
 
-For zsh, customization can be found here:
+**Formulae:**
+- `cloudflared` — Cloudflare Tunnel client
+- `ffmpeg` — Audio/video processing
+- `gh` — GitHub CLI
+- `git` — Version control
+- `nginx` — Web server
+- `node@22` — Node.js LTS
+- `nvm` — Node version manager
+- `ripgrep` — Fast grep alternative
+- `starship` — Cross-shell prompt
 
-- [zsh Auto suggestions like fsh](https://github.com/zsh-users/zsh-autosuggestions)
-- [powerlevel9k theme](https://github.com/bhilburn/powerlevel9k)
+**Casks:**
+- `caffeine` — Keep screen from going to sleep
+- `claude-code` — Claude Code CLI
+- `codex` — OpenAI Codex CLI
+- `ghostty` — GPU-accelerated terminal
+- `obsidian` — Knowledge base / note-taking
+- `rectangle` — Window management
+- `visual-studio-code` — Code editor
 
-Custom prompt for powerlevel9k theme
+## Shell Configuration
 
-```sh
-prompt_kubecontext() {
-  local kubectl_version="$(kubectl version --client 2>/dev/null)"
+This setup uses **Starship** for the shell prompt. After running `restore.sh`, edit `~/.config/starship.toml` to customize the prompt appearance.
 
-  if [[ -n "$kubectl_version" ]]; then
-    # Get the current Kuberenetes context
-    local cur_ctx=$(kubectl config view -o=jsonpath='{.current-context}')
-    cur_namespace="$(kubectl config view -o=jsonpath="{.contexts[?(@.name==\"${cur_ctx}\")].context.namespace}")"
-    # If the namespace comes back empty set it default.
-    if [[ -z "${cur_namespace}" ]]; then
-      cur_namespace="default"
-    fi
-
-    local k8s_final_text=""
-
-    cur_ctx_truncated="$(echo $cur_ctx | cut -c1-7)..."
-
-    if [[ "$cur_ctx" == "$cur_namespace" ]]; then
-      # No reason to print out the same identificator twice
-      k8s_final_text="$cur_ctx_truncated"
-    else
-      k8s_final_text="$cur_ctx_truncated/($cur_namespace)"
-    fi
-
-
-    "$1_prompt_segment" "$0" "$2" "blue" "white --bold" "$k8s_final_text" "KUBERNETES_ICON"
-  fi
-}
-```
+For more information: https://starship.rs/
